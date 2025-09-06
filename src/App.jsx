@@ -1,136 +1,196 @@
 import React from "react";
+import vedanth from "./assets/vedanth.jpg";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPython, FaDatabase, FaChartBar } from "react-icons/fa";
-import { SiTableau, SiPowerbi, SiAmazonaws } from "react-icons/si";
 
 export default function App() {
   return (
-    <div className="font-sans bg-white text-gray-900 relative overflow-hidden">
-      {/* Animated Data Background */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-          <defs>
-            <pattern id="dataPattern" width="100" height="100" patternUnits="userSpaceOnUse">
-              <circle cx="10" cy="10" r="3" fill="#14b8a6">
-                <animate attributeName="cy" values="10;90;10" dur="6s" repeatCount="indefinite" />
-              </circle>
-              <rect x="50" y="50" width="4" height="4" fill="#14b8a6">
-                <animate attributeName="x" values="50;80;20;50" dur="8s" repeatCount="indefinite" />
-              </rect>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#dataPattern)" />
-        </svg>
-      </div>
-
-      <div className="relative z-10">
-        {/* Navbar */}
-        <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-          <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-            <h1 className="text-xl font-bold text-teal-600">Vedanth Reddy</h1>
-            <div className="space-x-6">
-              <a href="#about" className="hover:text-teal-600">About</a>
-              <a href="#experience" className="hover:text-teal-600">Experience</a>
-              <a href="#projects" className="hover:text-teal-600">Projects</a>
-              <a href="#contact" className="hover:text-teal-600">Contact</a>
-            </div>
-          </div>
-        </nav>
-
-        {/* Hero Section */}
-        <section className="h-screen flex flex-col justify-center items-center text-center px-4" id="hero">
-          <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}
-            className="text-4xl md:text-6xl font-bold">
+    <div className="font-sans bg-gray-900 text-gray-200">
+      {/* Navbar */}
+      <nav className="bg-gray-800 text-gray-200 fixed w-full top-0 z-10 shadow-md">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+          <h1
+            className="text-xl font-bold text-teal-400 cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             Vedanth Reddy Doddannagari
-          </motion.h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Data Science Graduate | SQL | Python | Tableau | Power BI | AWS
-          </p>
-          <div className="mt-6 space-x-4">
-            <a href="#" className="px-5 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700">View Resume</a>
-            <a href="#contact" className="px-5 py-2 border border-teal-600 text-teal-600 rounded-lg hover:bg-teal-50">Contact Me</a>
+          </h1>
+          <div className="space-x-6">
+            <a href="#about" className="hover:text-teal-400">
+              About
+            </a>
+            <a href="#experience" className="hover:text-teal-400">
+              Experience
+            </a>
+            <a href="#skills" className="hover:text-teal-400">
+              Skills
+            </a>
+            <a href="#education" className="hover:text-teal-400">
+              Education
+            </a>
+            <a href="#contact" className="hover:text-teal-400">
+              Contact
+            </a>
           </div>
-        </section>
+        </div>
+      </nav>
 
-        {/* About Section */}
-        <section id="about" className="max-w-6xl mx-auto px-4 py-20">
-          <h2 className="text-3xl font-bold text-center mb-10">About Me</h2>
-          <p className="text-center max-w-3xl mx-auto text-gray-600 mb-10">
-            Data Science graduate student with a strong foundation in analytics, proficient in deriving actionable insights from complex datasets. Skilled in SQL, Python, Tableau, and Power BI, with hands-on experience in AWS cloud-based data integration.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-            <Skill icon={<FaPython />} label="Python" />
-            <Skill icon={<FaDatabase />} label="SQL" />
-            <Skill icon={<FaChartBar />} label="ML" />
-            <Skill icon={<SiTableau />} label="Tableau" />
-            <Skill icon={<SiPowerbi />} label="Power BI" />
-            <Skill icon={<SiAmazonaws />} label="AWS" />
+      {/* Hero Section */}
+      <section
+        id="hero"
+        className="flex flex-col items-center justify-center text-center px-6 pt-20"
+      >
+        <motion.img
+          src={vedanth}
+          alt="Vedanth Reddy"
+          className="w-60 h-60 rounded-full border-4 border-teal-400 mb-6 object-cover shadow-lg transform transition-transform duration-300 hover:scale-110 cursor-pointer"
+          whileHover={{ scale: 1.1 }}
+        />
+        <motion.h2
+          className="text-4xl font-bold text-white"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          Hi, I’m <span className="text-teal-400">Vedanth Reddy</span> 👋
+        </motion.h2>
+        <p className="text-gray-400 mt-4 max-w-xl">
+          Results-driven Data Analyst with 3 years of experience delivering
+          actionable business insights and building scalable data solutions.
+        </p>
+        <div className="mt-6 space-x-4">
+          <a
+            href="#experience"
+            className="px-6 py-2 bg-teal-500 text-white rounded-lg shadow hover:bg-teal-600"
+          >
+            View Experience
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-2 border border-teal-400 text-teal-400 rounded-lg hover:bg-teal-500 hover:text-white"
+          >
+            Contact Me
+          </a>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className=" max-w-5xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold text-center mb-8">About Me</h2>
+        <p className="text-gray-400 text-lg leading-relaxed text-center">
+          Results-driven Data Analyst with expertise in SQL, Python, R, Tableau,
+          Power BI, AWS, Azure, and Snowflake. Skilled in designing ETL
+          pipelines, statistical modeling, and building interactive dashboards
+          that drive strategic decision-making.
+        </p>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="bg-gray-800 py-16 px-6">
+        <h2 className="text-3xl font-bold text-center mb-10">Experience</h2>
+        <div className="max-w-5xl mx-auto space-y-8">
+          <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <h3 className="text-xl font-semibold text-teal-400">
+              Data Analyst | HCL Tech (Internship) | USA
+            </h3>
+            <p className="text-sm text-gray-400">Feb 2025 – Current</p>
+            <ul className="list-disc list-inside mt-4 text-gray-300 space-y-2">
+              <li>
+                Built ETL pipelines with Python & Snowflake, reducing 30+ hours
+                of manual work.
+              </li>
+              <li>
+                Optimized SQL queries, reducing runtime by 40% and improving BI
+                reporting speed.
+              </li>
+              <li>
+                Developed Tableau & Power BI dashboards tracking KPIs and
+                business trends.
+              </li>
+            </ul>
           </div>
-        </section>
 
-        {/* Experience Section */}
-        <section id="experience" className="bg-gray-50 py-20 px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Experience</h2>
-          <div className="max-w-4xl mx-auto space-y-6">
-            <ExperienceCard company="Downtown Evening Soup Kitchen (DESK)" role="Data Analyst Intern" duration="May 2025 – Present" description="Cleaned and analyzed data on 12,000+ pantry visits using Excel, Alteryx, and Tableau. Designed dashboards and automated reports to track KPIs, increasing pantry reach by 10%." />
-            <ExperienceCard company="NeoDocto" role="Data Analyst Intern" duration="Jan 2023 – Mar 2023" description="Delivered weekly analytical reports, conducted A/B tests improving campaign performance by 15%, and built engagement KPI dashboards." />
+          <div className="bg-gray-900 p-6 rounded-xl shadow-lg">
+            <h3 className="text-xl font-semibold text-teal-400">
+              Data Analyst | TCS | India
+            </h3>
+            <p className="text-sm text-gray-400">Mar 2021 – Jul 2023</p>
+            <ul className="list-disc list-inside mt-4 text-gray-300 space-y-2">
+              <li>
+                Built financial/operational models in Excel and automated BI
+                dashboards.
+              </li>
+              <li>
+                Created ETL workflows with Talend & Informatica to consolidate
+                enterprise data.
+              </li>
+              <li>
+                Conducted time-series forecasting to optimize inventory,
+                reducing stockouts by 18%.
+              </li>
+            </ul>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="py-20 px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Projects</h2>
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-            <ProjectCard title="AI Lecturer (Capstone)" description="GPT-4–driven pipeline to auto-generate narrated lecture videos, reducing production time by 90%. Developed adaptive quizzes and chatbot with 95% relevance." tech="Python, React, FastAPI" />
-            <ProjectCard title="Uber & Lyft Data Analysis" description="Analyzed 7M+ ride records using AWS S3, Athena, and Alteryx. Built Tableau dashboards to reveal traffic trends and ride patterns." tech="AWS, Tableau, Alteryx" />
-            <ProjectCard title="IPL Data Analysis" description="Analyzed IPL cricket data to identify trends and player performance. Created interactive Tableau dashboards for stakeholder insights." tech="Tableau, Data Visualization" />
+      {/* Skills Section */}
+      <section id="skills" className="max-w-6xl mx-auto px-6 py-16">
+        <h2 className="text-3xl font-bold text-center mb-10">Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+          <div className="bg-gray-800 p-4 rounded-lg shadow">
+            <h4 className="font-semibold text-teal-400">Languages</h4>
+            <p className="text-gray-300 mt-2">Python, R, SQL</p>
           </div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="bg-gray-50 py-20 px-4">
-          <h2 className="text-3xl font-bold text-center mb-10">Contact Me</h2>
-          <div className="flex justify-center space-x-6 text-2xl">
-            <a href="mailto:vedanthreddy.doddannagari@gmail.com" className="hover:text-teal-600"><FaEnvelope /></a>
-            <a href="https://github.com" className="hover:text-teal-600"><FaGithub /></a>
-            <a href="https://www.linkedin.com/in/vedanthreddy7/" className="hover:text-teal-600"><FaLinkedin /></a>
+          <div className="bg-gray-800 p-4 rounded-lg shadow">
+            <h4 className="font-semibold text-teal-400">Visualization</h4>
+            <p className="text-gray-300 mt-2">Tableau, Power BI</p>
           </div>
-        </section>
+          <div className="bg-gray-800 p-4 rounded-lg shadow">
+            <h4 className="font-semibold text-teal-400">Databases</h4>
+            <p className="text-gray-300 mt-2">MySQL, SQL Server, MongoDB</p>
+          </div>
+          <div className="bg-gray-800 p-4 rounded-lg shadow">
+            <h4 className="font-semibold text-teal-400">Cloud</h4>
+            <p className="text-gray-300 mt-2">AWS, Azure, Snowflake</p>
+          </div>
+        </div>
+      </section>
 
-        <footer className="py-6 text-center text-gray-500 text-sm border-t">
-          © {new Date().getFullYear()} Vedanth Reddy | Built with ❤️ and Data
-        </footer>
-      </div>
-    </div>
-  );
-}
+      {/* Education */}
+      <section id="education" className="bg-gray-800 py-16 px-6">
+        <h2 className="text-3xl font-bold text-center mb-10">Education</h2>
+        <div className="max-w-3xl mx-auto bg-gray-900 p-6 rounded-xl shadow">
+          <h3 className="text-xl font-semibold text-teal-400">
+            Master of Science in Data Science
+          </h3>
+          <p className="text-gray-300">University of West Haven, USA</p>
+          <p className="text-sm text-gray-400">Aug 2023 – May 2025</p>
+        </div>
+      </section>
 
-function Skill({ icon, label }) {
-  return (
-    <div className="flex flex-col items-center">
-      <div className="text-4xl text-teal-600 mb-2">{icon}</div>
-      <p>{label}</p>
-    </div>
-  );
-}
+      {/* Contact Section */}
+      <section id="contact" className="max-w-4xl mx-auto px-6 py-16 text-center">
+        <h2 className="text-3xl font-bold mb-6">Contact Me</h2>
+        <p className="text-gray-400 mb-4">
+          <a
+            href="mailto:vedanthreddy.doddannagari@gmail.com"
+            className="text-teal-400 hover:underline"
+          >
+            vedanthreddy.doddannagari@gmail.com
+          </a>
+        </p>
+        <a
+          href="https://www.linkedin.com/in/vedanthreddy25/"
+          target="_blank"
+          className="text-teal-400 hover:underline"
+        >
+          LinkedIn
+        </a>
+      </section>
 
-function ExperienceCard({ company, role, duration, description }) {
-  return (
-    <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-      <h3 className="text-xl font-semibold">{role}</h3>
-      <p className="text-teal-600">{company}</p>
-      <p className="text-gray-500 text-sm">{duration}</p>
-      <p className="mt-2 text-gray-600">{description}</p>
-    </div>
-  );
-}
-
-function ProjectCard({ title, description, tech }) {
-  return (
-    <div className="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-      <h3 className="text-xl font-semibold">{title}</h3>
-      <p className="mt-2 text-gray-600">{description}</p>
-      <p className="mt-2 text-sm text-teal-600">Tech: {tech}</p>
+      {/* Footer */}
+      <footer className="bg-gray-800 text-center py-6 text-gray-400">
+        © {new Date().getFullYear()} Vedanth Reddy Doddannagari. All Rights
+        Reserved.
+      </footer>
     </div>
   );
 }

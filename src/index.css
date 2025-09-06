@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+    scroll-behavior: smooth;
+  }
+  .photo-zoom {
+    transition: transform 0.3s ease;
+  }
+  
+  .photo-zoom:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  

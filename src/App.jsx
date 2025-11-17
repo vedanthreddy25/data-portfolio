@@ -53,7 +53,7 @@ export default function App() {
           Hi, I’m <span className="text-teal-400">Vedanth Reddy</span> 👋
         </motion.h2>
         <p className="text-gray-400 mt-4 max-w-xl">
-          Results-driven Data Analyst with 3 years of experience delivering
+          Results-driven Data Analyst with 4 years of experience delivering
           actionable business insights and building scalable data solutions.
         </p>
         <div className="mt-6 space-x-4">
@@ -112,7 +112,7 @@ export default function App() {
             <h3 className="text-xl font-semibold text-teal-400">
               Data Analyst | TCS | India
             </h3>
-            <p className="text-sm text-gray-400">Mar 2021 – Jul 2023</p>
+            <p className="text-sm text-gray-400">Mar 2020 – Jul 2023</p>
             <ul className="list-disc list-inside mt-4 text-gray-300 space-y-2">
               <li>
                 Built financial/operational models in Excel and automated BI

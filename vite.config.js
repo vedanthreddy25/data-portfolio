@@ -10,5 +10,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/vedanthreddy25/'   // REQUIRED for GitHub Pages
+  base: '/data-portfolio/'   // REQUIRED for GitHub Pages
 })
